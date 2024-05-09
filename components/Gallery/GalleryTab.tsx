@@ -13,11 +13,11 @@ type Props = {
 const GalleryTab = ({ image }: Props) => {
   return (
     <Tab
-      className={`relative flex aspect-square cursor-pointer items-center justify-center rounded-md bg-white `}
-      children={({ selected }) => (
+      className={`relative flex aspect-square cursor-pointer items-center justify-center rounded-md bg-white `}>
+        {({ selected }) => (
         <GTabItem selected={selected} image={image} />
       )}
-    />
+      </Tab>
   );
 };
 
