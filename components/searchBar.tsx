@@ -6,9 +6,9 @@ type Props = {}
 
 const SearchBar = (props: Props) => {
   return (
-    <div className='relative flex items-center'>
+    <div className='relative flex items-center w-full lg:w-[500px] mx-auto '>
         <Search className='absolute text-muted-foreground left-3 cursor-pointer' size={20} />
-        <Input placeholder='Iphone 14' className='sm:w-[350px] md:w-[500px] h-12 rounded-2xl pl-10  border-[3px] outline-brandblu focus:outline-none focus:ring-0 focus-visible:ring-0 focus-visible:outline-none ' />
+        <Input placeholder='Iphone 14' className=' md:w-full lg:w-[500px] h-12 rounded-2xl pl-10  border-[3px] outline-brandblu focus:outline-none focus:ring-0 focus-visible:ring-0 focus-visible:outline-none ' />
     </div>
   )
 }

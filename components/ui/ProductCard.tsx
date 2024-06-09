@@ -44,20 +44,20 @@ const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
       <div className="">
         <div className="inline-flex items-center w-full mt-2 justify-center">
           {data.isNew && (
-            <div className=" bg-brandblu/55 rounded-md text-white font-semibold px-2 text-small-regular">
+            <div className=" gradient rounded-md text-white font-semibold px-2 text-small-regular">
               New
             </div>
           )}
         </div>
         <p className="font-semibold text-lg line-clamp-1">{data.name}</p>
-        <p className="text-gray-500 text-small-semibold">{data?.category?.name}</p>
+        <p className="text-gray-500 line-clamp-1 text-small-semibold">{data?.category?.name}</p>
       </div>
       {/* PRICE */}
       <div className="flex items-center justify-between">
         <CurrencyItem value={data.price} percentage={data.percentage} isDiscount={data.isDiscounted} />
       </div>
       {data.percentage && (
-        <div className="absolute bg-brandylw bottom-5 right-0 rounded-tl-md rounded-bl-md text-white font-semibold px-2 py-1 text-subtle-medium sm:text-small-medium ">
+        <div className="absolute gradient bottom-11 right-0 rounded-tl-md rounded-bl-md text-white font-semibold px-1 sm:px-2 py-1 text-tiny-medium sm:text-small-medium ">
           {data.isDiscounted ? "-" : "+"}{data.percentage}%
         </div>
       )}

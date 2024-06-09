@@ -26,7 +26,7 @@ const CurrencyItem = ({value, percentage, isDiscount}: {
     }
     <div className={cn(
         `font-semibold`,
-        percentage ? "line-through text-gray-500 text-subtle-medium" : ""
+        percentage ? "line-through !text-brandblu text-tiny-medium sm:text-small-regular" : ""
     )}>
         {formatter.format(Number(value))}
     </div>

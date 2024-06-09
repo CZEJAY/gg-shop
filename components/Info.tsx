@@ -3,7 +3,7 @@ import { Product } from "@/types";
 import React from "react";
 import CurrencyItem from "./ui/CurrencyItem";
 import Button from "./Button";
-import { ShoppingCart } from "lucide-react";
+import { CreditCard, ShoppingCart } from "lucide-react";
 
 type Props = {
   data: Product;
@@ -14,13 +14,13 @@ function Info({ data }: Props) {
     <div>
       <div className="inline-flex items-start w-full mt-2">
         {data.isNew && (
-          <div className=" bg-black rounded-md text-white font-semibold px-2 ">
+          <div className=" gradient rounded-md text-white font-semibold px-2 ">
             New
           </div>
         )}
       </div>
       <h1 className="text-3xl font-bold text-gray-900">{data.name}</h1>
-      <div className="mt-3 flex items-end justify-between">
+      <div className="mt-3 flex items-end justify-between relative">
         <p className="text-2xl text-gray-900">
           <CurrencyItem
             value={data.price}
@@ -28,6 +28,11 @@ function Info({ data }: Props) {
             isDiscount={data.isDiscounted}
           />
         </p>
+          {data.percentage && (
+        <div className="absolute gradient bottom-0 right-0 rounded-tl-md rounded-bl-md text-white font-semibold px-1 sm:px-2 py-1 text-tiny-medium sm:text-small-medium ">
+          {data.isDiscounted ? "-" : "+"}{data.percentage}%
+        </div>
+      )}
       </div>
       <hr className="my-4" />
       <div className=" flex flex-col gap-y-6">
@@ -44,6 +49,10 @@ function Info({ data }: Props) {
         </div>
       </div>
       <div className="mt-10 flex items-center gap-x-3">
+        <Button className="gradient flex items-center gap-x-2">
+          Buy Now
+          <CreditCard className="" />
+        </Button>
         <Button className=" flex items-center gap-x-2">
           Add To Cart
           <ShoppingCart className="" />

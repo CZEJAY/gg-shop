@@ -16,19 +16,19 @@ const MainNav: React.FC<MainNavProps> = ({
     const routes = data.map((route) => ({
         href: `/category/${route.id}`,
         // @ts-ignore
-        label: route.label,
+        label: route.name,
         active: pathname === `/category/${route.id}`
     }))
   return (
-    <div className='bg-gradient-to-b from-brandblu/5 to-brandblu/10 sticky z-10 top-[10rem] w-full lg:top-24 p-5 flex items-center space-x-6'>
-        <div className="px-6 lg:px-24  mx-auto flex w-full items-center justify-between">
+    <div className='p-3 lg:py-4 bg-gradient-to-r from-blue-500 via-blue-400 to-blue-700 sticky z-10 top-[10rem] w-full lg:top-24 flex items-center space-x-6'>
+        <div className=" px-1 lg:px-24  mx-auto flex w-full items-center justify-between">
         {
             routes.map((route) => (
                 <Link
                 key={route.href}
                 className={cn(
-                    "text-sm font-medium transition-colors hover:text-black",
-                    route.active ? "text-black" : "text-neutral-500"
+                    " font-medium transition-colors hover:text-black !text-small-regular",
+                    route.active ? "text-black" : "text-white"
                 )}
                  href={route.href}>
                     {route.label}

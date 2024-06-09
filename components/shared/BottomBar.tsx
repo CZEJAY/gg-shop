@@ -21,10 +21,10 @@ function Bottombar() {
             <Link
               href={link.route}
               key={link.label} 
-              className={`bottombar_link ${isActive && "bg-brandblu/35"}`}
+              className={`bottombar_link ${isActive && "bg-transparent gradient"}`}
             >
-                <Icon />
-              <p className='text-subtle-medium text-light-1 max-sm:hidden'>
+                <Icon className={`text-black ${isActive && "text-white"}`} />
+              <p className={`text-subtle-medium text-black ${isActive && "text-white"} max-sm:hidden`}>
                 {link.label.split(/\s+/)[0]}
               </p>
             </Link>
